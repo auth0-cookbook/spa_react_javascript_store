@@ -1,0 +1,30 @@
+@import url("https://fonts.googleapis.com/css?family=Lato:400,700");
+
+@import url("https://fonts.googleapis.com/css?family=Ruda:400,600,700,800");
+
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@500;600&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Anonymous+Pro:wght@700&display=swap");
+
+@import "theme/effects.css";
+@import "theme/colors.css";
+@import "theme/fonts.css";
+
+@import "./components/core.css";
+@import "./components/layout.css";
+@import "./components/buttons.css";
+
+@import "./components/nav-bar.css";
+@import "./components/banner.css";
+@import "./components/location.css";
+@import "./components/category.css";
+@import "./components/data.css";
+@import "./components/ui.css";
+@import "./components/logo.css";
+@import "./components/action-bar.css";
+
+@import "./components/footer.css";
+
+@import "./frameworks/react.css";
+@import "./frameworks/vue.css";
+@import "./frameworks/angular.css";

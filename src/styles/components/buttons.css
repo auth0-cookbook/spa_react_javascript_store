@@ -1,0 +1,44 @@
+.button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  font-family: var(--core-font);
+  font-size: 18px;
+  text-align: center;
+  text-transform: uppercase;
+
+  height: 40px;
+  padding: 10px 20px;
+  border: 0;
+  border-radius: 3px;
+  outline: none;
+
+  user-select: none;
+  cursor: pointer;
+}
+
+.text-button {
+  background-color: transparent;
+  color: var(--pastel-brown);
+
+  font-weight: bold;
+
+  text-decoration: underline;
+}
+
+.solid-button {
+  background-color: var(--light-brown);
+  color: var(--white);
+  box-shadow: var(--ui-shadow);
+}
+
+.outline-button {
+  background-color: transparent;
+  color: var(--light-brown);
+
+  border: solid 2px #6f1a07;
+  border-radius: 3px;
+
+  font-weight: bold;
+}

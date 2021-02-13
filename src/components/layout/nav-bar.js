@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { NavBarTab } from "./nav-bar-tab";
-import { Logo } from "../common/logo";
+import { Logo } from "../logo";
 
 export const NavBar = () => (
   <nav className="nav-bar">

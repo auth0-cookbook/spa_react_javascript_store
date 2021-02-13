@@ -1,11 +1,11 @@
 import React from "react";
-import { View } from "../../components/layout/view";
+import { View } from "../components/layout/view";
 
-import { LocationGrid } from "./location-grid";
-import { useLocations } from "./use-locations";
+import { LocationGrid } from "../components/location-grid";
+import locationsData from "../data/locations.json";
 
 export const OrderView = () => {
-  const locations = useLocations();
+  const locations = Object.values(locationsData);
 
   return (
     <>

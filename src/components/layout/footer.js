@@ -1,12 +1,44 @@
 import React from "react";
 import { FooterRow } from "./footer-row";
 import { FooterCell } from "./footer-cell";
-import { Hyperlink } from "../common/hyperlink";
-import { Button } from "../common/button";
+import { Hyperlink } from "../hyperlink";
+import { Button } from "../button";
 import { useAuth0 } from "@auth0/auth0-react";
+
+const FooterList = ({ data }) => {
+  return (
+    <ul className="footer__list">
+      {data.map((listItem) => (
+        <li key={listItem.label} className="footer__list-item">
+          <Hyperlink path={listItem.path}>{listItem.label}</Hyperlink>
+        </li>
+      ))}
+    </ul>
+  );
+};
 
 export const Footer = () => {
   const { loginWithRedirect } = useAuth0();
+
+  const footerLinkList = [
+    {
+      path: "https://auth0.com/why-auth0/",
+      label: "Why Auth0",
+    },
+    {
+      path: "https://auth0.com/docs/get-started",
+      label: "How It Works",
+    },
+    {
+      path: "https://auth0.com/blog/developers/",
+      label: "Developer Blog",
+    },
+    {
+      path: "https://auth0.com/contact-us",
+      label: "Contact an Expert",
+    },
+  ];
+
   return (
     <footer className="footer">
       <FooterRow>
@@ -30,7 +62,7 @@ export const Footer = () => {
             variant="solid"
             customClass="footer__cta-button"
             label="Create Free Account"
-            action={() =>
+            handleClick={() =>
               loginWithRedirect({
                 screen_hint: "signup",
               })
@@ -38,28 +70,7 @@ export const Footer = () => {
           />
         </FooterCell>
         <FooterCell align="right">
-          <ul className="footer__list">
-            <li className="footer__list-item">
-              <Hyperlink path="https://auth0.com/why-auth0/">
-                Why Auth0
-              </Hyperlink>
-            </li>
-            <li className="footer__list-item">
-              <Hyperlink path="https://auth0.com/docs/get-started">
-                How It Works
-              </Hyperlink>
-            </li>
-            <li className="footer__list-item">
-              <Hyperlink path="https://auth0.com/blog/developers/">
-                Developer Blog
-              </Hyperlink>
-            </li>
-            <li className="footer__list-item">
-              <Hyperlink path="https://auth0.com/contact-us">
-                Contact an Expert
-              </Hyperlink>
-            </li>
-          </ul>
+          <FooterList data={footerLinkList} />
         </FooterCell>
       </FooterRow>
       <FooterRow>

@@ -1,6 +1,6 @@
 import React from "react";
 
-import logo from "../../assets/auth0-eats-logo.svg";
+import logo from "../assets/auth0-eats-logo.svg";
 
 export const Logo = () => {
   return (

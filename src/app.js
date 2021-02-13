@@ -3,36 +3,37 @@ import { Route, Switch } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
 
 import { Layout } from "./components/layout/layout";
-import { Loading } from "./components/common/loading";
-import { HomeView } from "./domain/home/home-view";
-import { OrderView } from "./domain/order/order-view";
-import { MenuView } from "./domain/menu/menu-view";
-import { AccountView } from "./domain/account/account-view";
-import { ProtectedRoute } from "./domain/security/protected-route";
+import { Loading } from "./components/loading";
+import { HomeView } from "./views/home-view";
+import { OrderView } from "./views/order-view";
+import { MenuView } from "./views/menu-view";
+import { AccountView } from "./views/account-view";
+import { ProtectedRoute } from "./components/security/protected-route";
+import { QueryClient, QueryClientProvider } from "react-query";
+import { ReactQueryDevtools } from "react-query/devtools";
+
+const queryClient = new QueryClient();
 
 export const App = () => {
   const { isLoading } = useAuth0();
 
-  if (isLoading) {
-    return (
+  return (
+    <QueryClientProvider client={queryClient}>
       <div className="app">
         <Layout>
-          <Loading />
+          {isLoading ? (
+            <Loading />
+          ) : (
+            <Switch>
+              <Route component={HomeView} exact path="/" />
+              <Route component={OrderView} path="/order" />
+              <Route component={MenuView} path="/menu" />
+              <ProtectedRoute component={AccountView} path="/account" />
+            </Switch>
+          )}
         </Layout>
       </div>
-    );
-  }
-
-  return (
-    <div className="app">
-      <Layout>
-        <Switch>
-          <Route component={HomeView} exact path="/" />
-          <Route component={OrderView} path="/order" />
-          <Route component={MenuView} path="/menu" />
-          <ProtectedRoute component={AccountView} path="/account" />
-        </Switch>
-      </Layout>
-    </div>
+      <ReactQueryDevtools initialIsOpen={false} />
+    </QueryClientProvider>
   );
 };

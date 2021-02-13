@@ -18,7 +18,6 @@
 }
 
 .footer__cell {
-  flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -27,8 +26,16 @@
   padding: 15px;
 }
 
+.footer__cell--sm {
+  flex: 1;
+}
+
 .footer__cell--xl {
   flex: 3;
+}
+
+.footer__cell--center {
+  align-items: center;
 }
 
 .footer__cell--right {

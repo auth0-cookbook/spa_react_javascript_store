@@ -1,8 +1,9 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { Button } from "../../components/common/button";
+import { useHistory } from "react-router-dom";
+import { Button } from "./button";
 
 export const OrderBar = () => {
+  const history = useHistory();
   return (
     <div className="action-bar">
       <div className="action-bar__message">
@@ -10,14 +11,18 @@ export const OrderBar = () => {
         <span>We've got you covered.</span>
       </div>
       <div className="action-bar__buttons">
-        <Link to="/order">
-          <Button variant="solid" label="Order Now" />
-        </Link>
+        <Button
+          variant="solid"
+          label="Order Now"
+          handleClick={() => history.push("/order")}
+        />
 
         <div className="action-bar__button-separator">or</div>
-        <Link to="/menu">
-          <Button variant="text" label="See our Menu" />
-        </Link>
+        <Button
+          variant="text"
+          label="See our Menu"
+          handleClick={() => history.push("/menu")}
+        />
       </div>
     </div>
   );

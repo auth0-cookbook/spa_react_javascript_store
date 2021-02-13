@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Button } from "../../components/common/button";
+import { Button } from "./button";
 
 export const LocationCard = ({ location }) => {
   return (
@@ -28,19 +28,19 @@ export const LocationCard = ({ location }) => {
           variant="outline"
           customClass="location-card__order-button"
           label="Order"
-          action={() => {}}
+          handleClick={() => {}}
         />
         <Button
           variant="text"
           customClass="location-card__directions-button"
           label="Directions"
-          action={() => {}}
+          handleClick={() => {}}
         />
         <Button
           variant="text"
           customClass="location-card__details-button"
           label="More Details"
-          action={() => {}}
+          handleClick={() => {}}
         />
       </div>
     </div>

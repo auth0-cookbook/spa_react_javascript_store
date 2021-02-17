@@ -4,12 +4,12 @@ import { View } from "../components/layout/view";
 
 import { DataGrid } from "../components/data-grid";
 
-import { LogoutBar } from "../components/security/logout-bar";
+import { LogoutBar } from "../security/logout-bar";
 import { Loading } from "../components/loading";
 import { useCustomerData } from "../utils/use-customer-data";
 import { useAuth0User } from "../utils/use-auth0-user";
 
-export const AccountView = () => {
+export const AccountPage = () => {
   const customerId = 9087654321;
 
   const { isLoading, customerData } = useCustomerData(customerId);

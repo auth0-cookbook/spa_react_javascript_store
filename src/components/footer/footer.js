@@ -3,7 +3,6 @@ import { FooterRow } from "./footer-row";
 import { FooterCell } from "./footer-cell";
 import { Hyperlink } from "../hyperlink";
 import { Button } from "../button";
-import { useAuth0 } from "@auth0/auth0-react";
 
 const FooterList = ({ data }) => {
   return (
@@ -18,8 +17,6 @@ const FooterList = ({ data }) => {
 };
 
 export const Footer = () => {
-  const { loginWithRedirect } = useAuth0();
-
   const footerLinkList = [
     {
       path: "https://auth0.com/why-auth0/",
@@ -62,11 +59,7 @@ export const Footer = () => {
             variant="solid"
             customClass="footer__cta-button"
             label="Create Free Account"
-            handleClick={() =>
-              loginWithRedirect({
-                screen_hint: "signup",
-              })
-            }
+            handleClick={() => window.open("https://auth0.com/signup")}
           />
         </FooterCell>
         <FooterCell align="right">

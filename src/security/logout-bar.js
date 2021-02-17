@@ -1,8 +1,8 @@
 import React from "react";
 
 import { LogoutButton } from "./logout-button";
-import { Button } from "../button";
-import { ActionsBar } from "../actions-bar";
+import { Button } from "../components/button";
+import { ActionsBar } from "../components/actions-bar";
 
 export const LogoutBar = () => {
   return (

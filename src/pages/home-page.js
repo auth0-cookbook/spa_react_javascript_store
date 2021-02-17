@@ -2,13 +2,9 @@ import React, { useEffect } from "react";
 
 import { Banner } from "../components/banner";
 
-import { LoginBar } from "../components/security/login-bar";
-import { OrderBar } from "../components/order-bar";
-import { useAuth0 } from "@auth0/auth0-react";
+import { WelcomeBar } from "../security/welcome-bar";
 
-export const HomeView = () => {
-  const { isAuthenticated } = useAuth0();
-
+export const HomePage = () => {
   useEffect(() => {
     document.title = "Auth0 Eats";
   });
@@ -22,7 +18,7 @@ export const HomeView = () => {
         handleClick={() => {}}
       />
 
-      {isAuthenticated ? <OrderBar /> : <LoginBar />}
+      <WelcomeBar />
     </>
   );
 };

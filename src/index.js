@@ -4,7 +4,7 @@ import "./styles/index.css";
 import { App } from "./app";
 
 import { BrowserRouter as Router } from "react-router-dom";
-import { Auth0ProviderWithHistory } from "./components/security/auth0-provider-with-history";
+import { Auth0ProviderWithHistory } from "./security/auth0-provider-with-history";
 
 ReactDOM.render(
   <Router>

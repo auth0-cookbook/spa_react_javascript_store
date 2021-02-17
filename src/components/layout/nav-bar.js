@@ -1,18 +1,26 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { NavBarTab } from "./nav-bar-tab";
 import { Logo } from "../logo";
+import { LoginButton } from "../../security/login-button";
+import { useAuth0 } from "@auth0/auth0-react";
+import { LogoutButton } from "../../security/logout-button";
 
-export const NavBar = () => (
-  <nav className="nav-bar">
-    <Link to="/">
-      <Logo />
-    </Link>
+export const NavBar = () => {
+  const { isAuthenticated, isLoading } = useAuth0();
 
-    <div className="nav-bar__tabs">
-      <NavBarTab label="Order" path="/order" />
-      <NavBarTab label="Menu" path="/menu" />
-      <NavBarTab label="MyByte" path="/account" />
-    </div>
-  </nav>
-);
+  if (isLoading) {
+    return null;
+  }
+
+  return (
+    <nav className="nav-bar">
+      <Link to="/">
+        <Logo />
+      </Link>
+
+      <div className="nav-bar__tabs">
+        {isAuthenticated ? <LogoutButton /> : <LoginButton />}
+      </div>
+    </nav>
+  );
+};

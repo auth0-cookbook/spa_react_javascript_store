@@ -4,11 +4,9 @@ import { useAuth0 } from "@auth0/auth0-react";
 
 import { Layout } from "./components/layout/layout";
 import { Loading } from "./components/loading";
-import { HomeView } from "./views/home-view";
-import { OrderView } from "./views/order-view";
-import { MenuView } from "./views/menu-view";
-import { AccountView } from "./views/account-view";
-import { ProtectedRoute } from "./components/security/protected-route";
+import { HomePage } from "./pages/home-page";
+import { AccountPage } from "./pages/account-page";
+import { ProtectedRoute } from "./security/protected-route";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { ReactQueryDevtools } from "react-query/devtools";
 
@@ -25,10 +23,8 @@ export const App = () => {
             <Loading />
           ) : (
             <Switch>
-              <Route component={HomeView} exact path="/" />
-              <Route component={OrderView} path="/order" />
-              <Route component={MenuView} path="/menu" />
-              <ProtectedRoute component={AccountView} path="/account" />
+              <Route component={HomePage} exact path="/" />
+              <ProtectedRoute component={AccountPage} path="/account" />
             </Switch>
           )}
         </Layout>

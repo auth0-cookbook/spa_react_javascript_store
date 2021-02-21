@@ -1,6 +1,0 @@
-:root {
-  --ui-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.06),
-    0 4px 5px 0 rgba(0, 0, 0, 0.06), 0 1px 10px 0 rgba(0, 0, 0, 0.08);
-  fill: rgba(0, 0, 0, 0.54);
-  --ui-shadow-border: 1px solid rgba(0, 0, 0, 0.14);
-}

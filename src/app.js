@@ -1,39 +1,29 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
+import { PageLayout } from "./components/page-layout/page-layout";
+import { Loader } from "./components/loader/loader";
+import { AccountPage } from "./pages/account-page";
+import { ProtectedRoute } from "./security/protected-route";
+import { HomePage } from "./pages/home-page";
 
-import { Layout } from "./components/layout/layout";
-import { Loading } from "./components/loading";
-import { HomeView } from "./views/home-view";
-import { OrderView } from "./views/order-view";
-import { MenuView } from "./views/menu-view";
-import { AccountView } from "./views/account-view";
-import { ProtectedRoute } from "./components/security/protected-route";
-import { QueryClient, QueryClientProvider } from "react-query";
-import { ReactQueryDevtools } from "react-query/devtools";
-
-const queryClient = new QueryClient();
+import "./app.css";
 
 export const App = () => {
   const { isLoading } = useAuth0();
 
   return (
-    <QueryClientProvider client={queryClient}>
-      <div className="app">
-        <Layout>
-          {isLoading ? (
-            <Loading />
-          ) : (
-            <Switch>
-              <Route component={HomeView} exact path="/" />
-              <Route component={OrderView} path="/order" />
-              <Route component={MenuView} path="/menu" />
-              <ProtectedRoute component={AccountView} path="/account" />
-            </Switch>
-          )}
-        </Layout>
-      </div>
-      <ReactQueryDevtools initialIsOpen={false} />
-    </QueryClientProvider>
+    <div className="app">
+      <PageLayout>
+        {isLoading ? (
+          <Loader />
+        ) : (
+          <Switch>
+            <Route component={HomePage} exact path="/" />
+            <ProtectedRoute component={AccountPage} path="/account" />
+          </Switch>
+        )}
+      </PageLayout>
+    </div>
   );
 };

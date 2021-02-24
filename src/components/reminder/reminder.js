@@ -16,6 +16,31 @@ export const Reminder = () => {
         Follow these steps to set up an Authentication service with Auth0 and to
         connect your React application with it.
       </p>
+      {origin.includes("csb.app") && (
+        <>
+          <h2>Set Up CodeSandbox</h2>
+          <li>
+            <strong>
+              Open the CodeSandbox Live Site Preview (<code>{origin}</code>) in
+              a new window or tab to login successfully later on.
+            </strong>
+            <ul>
+              <li>
+                Using the browser embedded in the IDE will throw an error.
+              </li>
+              <li>
+                Any changes you make to the project source code using the editor
+                will still update the new window or tab automatically.
+              </li>
+              <li>
+                You can copy and paste <code>{origin}</code> in a new tab or
+                window. Alternatively, you can click the "Open in New Window"
+                button of the embedded browser.
+              </li>
+            </ul>
+          </li>
+        </>
+      )}
       <h2>Register a Client Application with Auth0</h2>
       <ul>
         <li>
@@ -101,26 +126,6 @@ export const Reminder = () => {
             Restart your React application server for it to recognize the
             changes you made to <code>.env</code>..
           </li>
-        )}
-        {origin.includes("csb.app") && (
-          <>
-            <li>
-              <strong>
-                In order to login successfully, you must open the CodeSandbox
-                Live Site Preview (<code>{origin}</code>) in a new window or
-                tab.
-              </strong>
-              <ul>
-                <li>
-                  Using the browser embedded in the IDE will throw an error.
-                </li>
-                <li>
-                  Any changes you make to the project source code using the
-                  editor will still update the new window or tab automatically.
-                </li>
-              </ul>
-            </li>
-          </>
         )}
       </ul>
     </div>

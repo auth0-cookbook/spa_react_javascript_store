@@ -19,14 +19,8 @@ export const Reminder = () => {
       <h2>Register a Client Application with Auth0</h2>
       <ul>
         <li>
-          Open the{" "}
-          <a
-            className="reminder-hyperlink"
-            href="https://manage.auth0.com/#/applications"
-          >
-            Auth0 Applications
-          </a>{" "}
-          section of the Auth0 Dashboard.
+          Open the <strong>Auth0 Applications</strong> section of the Auth0
+          Dashboard.
         </li>
         <li>
           Click on the <strong>Create Application</strong> button.

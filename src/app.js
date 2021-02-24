@@ -15,9 +15,8 @@ export const App = () => {
 
   const auth0ClientId = process.env.REACT_APP_AUTH0_CLIENT_ID;
   const auth0Domain = process.env.REACT_APP_AUTH0_DOMAIN;
-  const auth0Audience = process.env.REACT_APP_AUTH0_AUDIENCE;
 
-  if (!(auth0Domain && auth0ClientId && auth0Audience)) {
+  if (!(auth0Domain && auth0ClientId)) {
     return (
       <div className="app">
         <Reminder />

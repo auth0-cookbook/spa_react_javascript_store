@@ -24,7 +24,7 @@
 }
 
 .reminder strong {
-  color: #ffa69e;
+  color: var(--lime-green);
 }
 
 .reminder pre {

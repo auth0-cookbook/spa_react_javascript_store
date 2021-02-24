@@ -76,6 +76,11 @@ export const Reminder = () => {
           </ul>
         </li>
         <li>
+          <strong>
+            Save your <code>.env</code> file changes.
+          </strong>
+        </li>
+        <li>
           Head back to the <i>Settings</i> tab of your Auth0 application
           register page and update the following fields:
           <ul>
@@ -114,10 +119,6 @@ export const Reminder = () => {
                   editor will still update the new window or tab automatically.
                 </li>
               </ul>
-            </li>
-            <li>
-              Refresh your CodeSandbox project for it to recognize the changes
-              you made to <code>.env</code>.
             </li>
           </>
         )}

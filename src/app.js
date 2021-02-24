@@ -6,11 +6,24 @@ import { Loader } from "./components/loader/loader";
 import { AccountPage } from "./pages/account-page";
 import { ProtectedRoute } from "./security/protected-route";
 import { HomePage } from "./pages/home-page";
+import { Reminder } from "./components/reminder/reminder";
 
 import "./app.css";
 
 export const App = () => {
   const { isLoading } = useAuth0();
+
+  const auth0ClientId = process.env.REACT_APP_AUTH0_CLIENT_ID;
+  const auth0Domain = process.env.REACT_APP_AUTH0_DOMAIN;
+  const auth0Audience = process.env.REACT_APP_AUTH0_AUDIENCE;
+
+  if (!(auth0Domain && auth0ClientId && auth0Audience)) {
+    return (
+      <div className="app">
+        <Reminder />
+      </div>
+    );
+  }
 
   return (
     <div className="app">

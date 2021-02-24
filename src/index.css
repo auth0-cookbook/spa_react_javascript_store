@@ -6,6 +6,8 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Anonymous+Pro:wght@700&display=swap");
 
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300&display=swap");
+
 /* COLORS */
 
 :root {
@@ -25,6 +27,7 @@
   --green: #009b72;
   --purple: #6761a8;
   --blue: #009ddc;
+  --sky-blue: #69ddff;
 }
 
 /* EFFECTS */
@@ -43,6 +46,7 @@
   --header-font: "Oswald", sans-serif;
   --section-font: "Lato", sans-serif;
   --core-font: "Ruda", sans-serif;
+  --mono-font: "Fira Code", monospace;
 }
 
 * {
@@ -63,12 +67,24 @@ body {
   overflow-y: scroll;
 }
 
+h1 {
+  padding: 0;
+  margin: 15px 0;
+
+  font-family: var(--header-font);
+  font-size: 36px;
+  font-weight: 500;
+  color: #451400;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
 h2 {
   padding: 0;
   margin: 15px 0;
 
   font-family: var(--header-font);
-  font-size: 30px;
+  font-size: 28px;
   font-weight: 500;
   color: #451400;
   text-transform: uppercase;

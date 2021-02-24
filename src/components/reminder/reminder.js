@@ -91,6 +91,36 @@ export const Reminder = () => {
           Scroll to the bottom of the <i>Settings</i> page and click on the{" "}
           <strong>Save Changes</strong> button.
         </li>
+        {origin.includes("localhost") && (
+          <li>
+            Restart your React application server for it to recognize the
+            changes you made to <code>.env</code>..
+          </li>
+        )}
+        {origin.includes("csb.app") && (
+          <>
+            <li>
+              <strong>
+                In order to login successfully, you must open the CodeSandbox
+                Live Site Preview (<code>{origin}</code>) in a new window or
+                tab.
+              </strong>
+              <ul>
+                <li>
+                  Using the browser embedded in the IDE will throw an error.
+                </li>
+                <li>
+                  Any changes you make to the project source code using the
+                  editor will still update the new window or tab automatically.
+                </li>
+              </ul>
+            </li>
+            <li>
+              Refresh your CodeSandbox project for it to recognize the changes
+              you made to <code>.env</code>.
+            </li>
+          </>
+        )}
       </ul>
     </div>
   );

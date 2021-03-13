@@ -128,7 +128,7 @@ After a user authenticates, Auth0 only calls back any of the URLs listed in this
 
 A client application will make requests under the hood to an Auth0 URL to handle authentication requests. As such, you need to add your the application's [origin URL](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Origin) to avoid [Cross-Origin Resource Sharing (CORS)](https://auth0.com/blog/cors-tutorial-a-guide-to-cross-origin-resource-sharing/) issues.
     
-#### Allowed Logout URLs
+### Allowed Logout URLs
 
 This field holds a set of URLs that Auth0 can redirect to after a user logs out of your application. The default configuration of the demo client uses the provided value for redirecting users.
     

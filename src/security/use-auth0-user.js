@@ -16,5 +16,5 @@ export const useAuth0User = () => {
     setAuth0User({ firstName, lastName, email, emailVerified });
   }, [user]);
 
-  return auth0User;
+  return { auth0User };
 };

@@ -13,16 +13,16 @@ import "./app.css";
 export const App = () => {
   const { isLoading } = useAuth0();
 
-  const auth0ClientId = process.env.REACT_APP_AUTH0_CLIENT_ID;
-  const auth0Domain = process.env.REACT_APP_AUTH0_DOMAIN;
+  // const auth0ClientId = process.env.REACT_APP_AUTH0_CLIENT_ID;
+  // const auth0Domain = process.env.REACT_APP_AUTH0_DOMAIN;
 
-  if (!(auth0Domain && auth0ClientId)) {
-    return (
-      <div className="app">
-        <Reminder />
-      </div>
-    );
-  }
+  // if (!(auth0Domain && auth0ClientId)) {
+  //   return (
+  //     <div className="app">
+  //       <Reminder />
+  //     </div>
+  //   );
+  // }
 
   return (
     <div className="app">

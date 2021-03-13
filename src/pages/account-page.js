@@ -4,6 +4,7 @@ import { useSecureApi } from "../security/use-secure-api";
 import { useAuth0User } from "../security/use-auth0-user";
 import { Loader } from "../components/loader/loader";
 import { DataGrid } from "../components/data-grid/data-grid";
+import { ErrorView } from "../components/error-view/error-view";
 
 export const AccountPage = () => {
   const auth0Audience = process.env.REACT_APP_AUTH0_AUDIENCE;
@@ -13,12 +14,19 @@ export const AccountPage = () => {
   const resource = "rewards";
   const resourceUrl = `${apiServerRootUrl}/api/customers/${resource}/${customerId}`;
 
-  const auth0User = useAuth0User();
-  const { data: rewards, isLoading } = useSecureApi(resourceUrl, {
-    audience: auth0Audience,
-  });
+  const { auth0User } = useAuth0User();
+  const { dataFromApi: rewardsData, isLoading, apiCallError } = useSecureApi(
+    resourceUrl,
+    {
+      audience: auth0Audience,
+    }
+  );
 
-  if (isLoading || !rewards || !auth0User) {
+  if (apiCallError) {
+    return <ErrorView errorMessage={apiCallError} />;
+  }
+
+  if (isLoading || !rewardsData || !auth0User) {
     return <Loader />;
   }
 
@@ -52,15 +60,15 @@ export const AccountPage = () => {
       },
       {
         label: "Balance",
-        value: rewards.balance,
+        value: rewardsData.balance,
       },
       {
         label: "Text Alerts",
-        value: rewards.alerts.text ? "Enrolled" : "Not Enrolled",
+        value: rewardsData.alerts.text ? "Enrolled" : "Not Enrolled",
       },
       {
         label: "Email Alerts",
-        value: rewards.alerts.email ? "Enrolled" : "Not Enrolled",
+        value: rewardsData.alerts.email ? "Enrolled" : "Not Enrolled",
       },
     ],
   };

@@ -1,33 +1,45 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useAuth0 } from "@auth0/auth0-react";
+import axios from "axios";
 
 export const useSecureApi = (url, options = {}) => {
-  const [data, setData] = useState(null);
+  const [dataFromApi, setDataFromApi] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const [apiCallError, setApiCallError] = useState(null);
   const [accessToken, setAccessToken] = useState(null);
+
+  const { current: callOptions } = useRef(options);
 
   const { getAccessTokenSilently } = useAuth0();
 
-  const { audience, scope, ...fetchOptions } = options;
-
   useEffect(() => {
+    const { audience, scope } = callOptions;
+
+    if (!audience) {
+      return;
+    }
+
     const getAccessToken = async () => {
       try {
         setAccessToken(await getAccessTokenSilently({ audience, scope }));
       } catch (e) {
-        setError(e);
+        setApiCallError(e);
       }
     };
 
     getAccessToken();
-  }, [audience, scope, getAccessTokenSilently]);
+  }, [getAccessTokenSilently, callOptions]);
 
   useEffect(() => {
+    if (!accessToken) {
+      return;
+    }
+
     const fetchData = async () => {
-      const { headers, ...configOptions } = fetchOptions;
+      const { audience, scope, headers, ...configOptions } = callOptions;
+
       try {
-        const response = await fetch(url, {
+        const { data } = await axios(url, {
           ...configOptions,
           headers: {
             ...headers,
@@ -35,20 +47,28 @@ export const useSecureApi = (url, options = {}) => {
           },
         });
 
-        const responseData = await response.json();
+        console.log(data);
 
-        setData(responseData);
+        setDataFromApi(data);
         setIsLoading(false);
-      } catch (e) {
-        setError(e);
+      } catch (error) {
+        let errorMessage = "An error occurred.";
+
+        if (error.response) {
+          errorMessage = "Unable to load data.";
+        }
+
+        if (!error.response && error.message) {
+          errorMessage = error.message;
+        }
+
+        setApiCallError(errorMessage);
         setIsLoading(false);
       }
     };
 
-    if (accessToken) {
-      fetchData();
-    }
-  }, [url, accessToken, fetchOptions]);
+    fetchData();
+  }, [accessToken, url, callOptions]);
 
-  return { data, isLoading, error };
+  return { dataFromApi, isLoading, apiCallError };
 };

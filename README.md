@@ -2,7 +2,7 @@
 
 You can use this sample to learn how to secure a React Single-Page Application (SPA). This application uses Auth0 to implement user authentication and secure access to some of its routes.
 
-You can also use this client application to practice making secure API calls to any of the Auth0 Eats Customer APIs.
+You can also use this client application to practice making secure API calls to any of the Auth0 Eats Customers APIs.
 
 ## 1. Get Started
 
@@ -91,15 +91,15 @@ Head back to the Auth0 application "Settings" page and use its configuration val
 
 - The value of `REACT_APP_AUTH0_CLIENT_ID` is the value of your Auth0 Client ID.
 
-The values of `REACT_APP_AUTH0_AUDIENCE` and `REACT_APP_API_SERVER_ROOT_URL` require that you have set up any version of the Auth0 Eats Customer API server.
+The values of `REACT_APP_AUTH0_AUDIENCE` and `REACT_APP_API_SERVER_ROOT_URL` require that you have set up any version of the Auth0 Eats Customers API server.
 
 - The value of `REACT_APP_AUTH0_AUDIENCE` is the value of your Auth0 API **Identifier**.
 
     - If you used the prescribed value, the Auth0 API Identifier value is `https://customers.example.com`.
 
-- The value of `REACT_APP_API_SERVER_ROOT_URL` is the value of your Auth0 Eats Customer API server root URL.
+- The value of `REACT_APP_API_SERVER_ROOT_URL` is the value of your Auth0 Eats Customers API server root URL.
     
-   - If you are using a local repository to run the Auth0 Eats Customer API server, the value is `http://localhost:6060`.
+   - If you are using a local repository to run the Auth0 Eats Customers API server, the value is `http://localhost:6060`.
        
    - If you are using a cloud IDE, such a Glitch, or any live server, use the server URL that the platform provides.
    

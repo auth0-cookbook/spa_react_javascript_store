@@ -4,11 +4,11 @@ You can use this sample to learn how to secure a React Single-Page Application (
 
 You can also use this client application to practice making secure API calls to any of the Auth0 Eats Customer APIs.
 
-## 0. Get Started
+## 1. Get Started
 
 There are two ways to get started: you can work with a local repository or you can work with a cloud project using CodeSandbox.
 
-### 0.A. Use a local repository
+### 1.A. Use a local repository
 
 Clone the repository: 
 
@@ -40,7 +40,7 @@ Finally, run the project:
 npm start
 ```
 
-### 0.B. Use CodeSandbox, an online IDE
+### 1.B. Use CodeSandbox, an online IDE
 
 Click on the link below to launch this project on CodeSandbox:
 
@@ -56,7 +56,7 @@ To complete the set up, create a `.env` file under the project directory:
 .env
 ```
 
-## 1. Register a Client Application with Auth0
+## 2. Register a Client Application with Auth0
 
 In this section, you'll setup an authentication service with Auth0 so that you can create users, log in, and access pages that make requests to protected API endpoints.
 
@@ -106,7 +106,7 @@ The values of `REACT_APP_AUTH0_AUDIENCE` and `REACT_APP_API_SERVER_ROOT_URL` req
    
 **To complete this setup, restart the React development server**. Locally, you can do that by stopping the server and running it again. In CodeSandbox, the server should restart automatically once you update `.env` &mdash; If not, refresh your project page.
 
-## 2. Connect a Client Application with Auth0
+## 3. Connect a Client Application with Auth0
 
 Head back to the **"Settings"** tab of your Auth0 application register page and update the following fields with your application root URL.
 
@@ -134,7 +134,7 @@ This field holds a set of URLs that Auth0 can redirect to after a user logs out 
     
 With these values in place, you can scroll to the bottom of the **"Settings"** page and click on the **"Save Changes"** button.
 
-## 3. Testing the User Authentication Flow
+## 4. Testing the User Authentication Flow
 
 Click the **"LOG IN"** button located in the upper-right corner. Your React application should redirect you to the Auth0 Universal Login page.
 

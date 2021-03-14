@@ -40,6 +40,8 @@ Finally, run the project:
 npm start
 ```
 
+Visit [http://localhost:4040/](http://localhost:4040/) to access the sample application.
+
 ### 1.B. Use CodeSandbox, an online IDE
 
 Click on the link below to launch this project on CodeSandbox:

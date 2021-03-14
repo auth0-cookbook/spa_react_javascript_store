@@ -31,7 +31,7 @@ npm i
 Create a `.env` file under the project directory:
 
 ```bash
-.env
+touch .env
 ```
 
 Finally, run the project:

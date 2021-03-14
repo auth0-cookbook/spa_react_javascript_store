@@ -12,7 +12,7 @@ export const AccountPage = () => {
 
   const customerId = 9087654321;
   const resource = "rewards";
-  const resourceUrl = `${apiServerRootUrl}/api/customers/${resource}/${customerId}`;
+  const resourceUrl = `${apiServerRootUrl}/api/${resource}/${customerId}`;
 
   const { auth0User } = useAuth0User();
   const { dataFromApi: rewardsData, isLoading, apiCallError } = useSecureApi(

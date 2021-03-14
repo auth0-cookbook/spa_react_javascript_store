@@ -2,7 +2,7 @@
 
 You can use this sample to learn how to secure a React Single-Page Application (SPA). This application uses Auth0 to implement user authentication and secure access to some of its routes.
 
-You can also use this client application to practice making secure API calls to any of the Auth0 Eats Customers APIs.
+You can also use this client application to practice making secure API calls to any of the Auth0 Eats Rewards APIs.
 
 ## 1. Get Started
 
@@ -89,15 +89,15 @@ Head back to the Auth0 application "Settings" page and use its configuration val
 
 - The value of `REACT_APP_AUTH0_CLIENT_ID` is the value of your Auth0 Client ID.
 
-The values of `REACT_APP_AUTH0_AUDIENCE` and `REACT_APP_API_SERVER_ROOT_URL` require that you have set up any version of the Auth0 Eats Customers API server.
+The values of `REACT_APP_AUTH0_AUDIENCE` and `REACT_APP_API_SERVER_ROOT_URL` require that you have set up any version of the Auth0 Eats Rewards API server.
 
 - The value of `REACT_APP_AUTH0_AUDIENCE` is the value of your Auth0 API **Identifier**.
 
-    - If you used the prescribed value, the Auth0 API Identifier value is `https://customers.example.com`.
+    - If you used the prescribed value, the Auth0 API Identifier value is `https://rewards.example.com`.
 
-- The value of `REACT_APP_API_SERVER_ROOT_URL` is the value of your Auth0 Eats Customers API server root URL.
+- The value of `REACT_APP_API_SERVER_ROOT_URL` is the value of your Auth0 Eats Rewards API server root URL.
     
-   - If you are using a local repository to run the Auth0 Eats Customers API server, the value is `http://localhost:6060`.
+   - If you are using a local repository to run the Auth0 Eats Rewards API server, the value is `http://localhost:6060`.
        
    - If you are using a cloud IDE, such a Glitch, or any live server, use the server URL that the platform provides.
    
@@ -138,7 +138,7 @@ Click the **"LOG IN"** button located in the upper-right corner. Your React appl
 
 Once you log in, you should return to the home page.
 
-To trigger a login transaction, you can also click on the **"MYBYTE"** button, which requires a successful user login for access. **"MYBYTE"** is an account page that presents you with all your user information. Under the hood, this page calls the Auth0 Eats Customers API to obtain your rewards data. This transaction requires a valid access token to be successful.
+To trigger a login transaction, you can also click on the **"MYBYTE"** button, which requires a successful user login for access. **"MYBYTE"** is an account page that presents you with all your user information. Under the hood, this page calls the Auth0 Eats Rewards API to obtain your rewards data. This transaction requires a valid access token to be successful.
 
 Click on the **"LOG OUT"** button. You should return to the home page.
 

@@ -13,7 +13,7 @@ There are two ways to get started: you can work with a local repository or you c
 Clone the repository: 
 
 ```bash
-git@github.com:auth0-cookbook/spa_react_javascript_store.git
+git clone git@github.com:auth0-cookbook/spa_react_javascript_store.git
 ```
 
 Make the project directory your current directory:

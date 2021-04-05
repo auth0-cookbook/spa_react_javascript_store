@@ -1,6 +1,7 @@
 import React from "react";
-import { Button } from "../button/button";
 import PropTypes from "prop-types";
+
+import { Button } from "components/button/button";
 
 import "./footer.css";
 

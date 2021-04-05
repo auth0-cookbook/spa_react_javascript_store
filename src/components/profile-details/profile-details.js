@@ -1,6 +1,7 @@
-import { useAuth0User } from "../../security/hooks/use-auth0-user";
-import { DataBox } from "../data-grid/data-grid";
 import React from "react";
+
+import { DataBox } from "components/data-grid/data-grid";
+import { useAuth0User } from "security/hooks/use-auth0-user";
 
 export const ProfileDetails = () => {
   const { auth0User } = useAuth0User();

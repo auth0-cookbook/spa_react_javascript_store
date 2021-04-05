@@ -1,7 +1,8 @@
 import React from "react";
-import { Banner } from "../components/banner/banner";
-import { WelcomeBar } from "../components/welcome-bar/welcome-bar";
-import { PageContent } from "../components/page-content/page-content";
+
+import { Banner } from "components/banner/banner";
+import { WelcomeBar } from "components/welcome-bar/welcome-bar";
+import { PageContent } from "components/page-content/page-content";
 
 export const HomePage = () => {
   return (

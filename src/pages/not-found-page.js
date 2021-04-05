@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { PageContent } from "../components/page-content/page-content";
+
+import { PageContent } from "components/page-content/page-content";
 
 export const NotFoundPage = () => {
   return (

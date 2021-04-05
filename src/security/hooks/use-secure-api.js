@@ -2,7 +2,7 @@ import { useRef, useState } from "react";
 import axios from "axios";
 import { useQuery } from "react-query";
 
-import { useAccessToken } from "./use-access-token";
+import { useAccessToken } from "security/hooks/use-access-token";
 
 export const useSecureApi = (
   url,

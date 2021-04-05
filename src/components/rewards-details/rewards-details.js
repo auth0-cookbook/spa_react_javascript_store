@@ -1,7 +1,8 @@
-import { useSecureApi } from "../../security/hooks/use-secure-api";
-import { DataBox } from "../data-grid/data-grid";
-import { Loader } from "../loader/loader";
 import React from "react";
+
+import { DataBox } from "components/data-grid/data-grid";
+import { Loader } from "components/loader/loader";
+import { useSecureApi } from "security/hooks/use-secure-api";
 
 export const RewardsDetails = ({ customerId }) => {
   const auth0Audience = process.env.REACT_APP_AUTH0_AUDIENCE;

@@ -1,12 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Logo } from "../logo/logo";
-import { NavBarTab } from "../nav-bar-tab/nav-bar-tab";
-
 import { useAuth0 } from "@auth0/auth0-react";
 
+import { Logo } from "components/logo/logo";
+import { NavBarTab } from "components/nav-bar-tab/nav-bar-tab";
+import { AuthenticationButton } from "security/authentication-button";
+
 import "./nav-bar.css";
-import { AuthenticationButton } from "../../security/authentication-button";
 
 export const NavBar = () => {
   const { isLoading } = useAuth0();

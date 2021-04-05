@@ -1,5 +1,6 @@
 import React from "react";
-import { PageContent } from "../components/page-content/page-content";
+
+import { PageContent } from "components/page-content/page-content";
 
 export const ErrorPage = ({ errorMessage }) => {
   return (

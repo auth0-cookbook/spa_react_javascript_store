@@ -7,13 +7,26 @@ export const useAuth0User = () => {
 
   useEffect(() => {
     const {
-      given_name: firstName,
-      family_name: lastName,
       email,
       email_verified: emailVerified,
+      family_name: lastName,
+      given_name: firstName,
+      locale,
+      name,
+      nickname,
+      picture,
     } = user;
 
-    setAuth0User({ firstName, lastName, email, emailVerified });
+    setAuth0User({
+      email,
+      emailVerified,
+      lastName,
+      firstName,
+      locale,
+      name,
+      nickname,
+      picture,
+    });
   }, [user]);
 
   return { auth0User };

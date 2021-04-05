@@ -6,23 +6,13 @@ import { Loader } from "./components/loader/loader";
 import { AccountPage } from "./pages/account-page";
 import { ProtectedRoute } from "./security/protected-route";
 import { HomePage } from "./pages/home-page";
-import { Reminder } from "./components/reminder/reminder";
 
 import "./app.css";
 
+import { NotFoundPage } from "./pages/not-found-page";
+
 export const App = () => {
   const { isLoading } = useAuth0();
-
-  // const auth0ClientId = process.env.REACT_APP_AUTH0_CLIENT_ID;
-  // const auth0Domain = process.env.REACT_APP_AUTH0_DOMAIN;
-
-  // if (!(auth0Domain && auth0ClientId)) {
-  //   return (
-  //     <div className="app">
-  //       <Reminder />
-  //     </div>
-  //   );
-  // }
 
   return (
     <div className="app">
@@ -33,6 +23,7 @@ export const App = () => {
           <Switch>
             <Route component={HomePage} exact path="/" />
             <ProtectedRoute component={AccountPage} path="/account" />
+            <Route component={NotFoundPage} />
           </Switch>
         )}
       </PageLayout>

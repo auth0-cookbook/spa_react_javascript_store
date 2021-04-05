@@ -21,10 +21,12 @@ DataField.propTypes = {
   verified: PropTypes.bool,
 };
 
-const DataBox = (props) => (
+export const DataBox = ({ title, fields, error }) => (
   <div className="data-box">
-    <h3 className="data-box__title">{props.title}</h3>
-    {props.children}
+    <h3 className="data-box__title">{title}</h3>
+    {fields &&
+      fields.map((field) => <DataField key={field.label} {...field} />)}
+    {error && <div className="data-box__error">{error}</div>}
   </div>
 );
 
@@ -32,34 +34,6 @@ DataBox.propTypes = {
   title: PropTypes.string.isRequired,
 };
 
-export const DataGrid = ({ data }) => {
-  return (
-    <div className="data-grid">
-      {data.map((dataBox) => {
-        return (
-          <DataBox key={dataBox.title} title={dataBox.title}>
-            {dataBox.fields.map((field) => (
-              <DataField key={field.label} {...field} />
-            ))}
-          </DataBox>
-        );
-      })}
-    </div>
-  );
-};
-
-DataGrid.propTypes = {
-  data: PropTypes.arrayOf(
-    PropTypes.shape({
-      title: PropTypes.string.isRequired,
-      fields: PropTypes.arrayOf(
-        PropTypes.shape({
-          label: PropTypes.string.isRequired,
-          value: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
-            .isRequired,
-          verified: PropTypes.bool,
-        })
-      ),
-    })
-  ).isRequired,
+export const DataGrid = ({ children }) => {
+  return <div className="data-grid">{children}</div>;
 };

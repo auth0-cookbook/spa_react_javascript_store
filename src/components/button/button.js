@@ -10,7 +10,7 @@ export const Button = ({
   customClass,
   enabled,
 }) => {
-  let className = `button ${variant}-button ${customClass} ${
+  const className = `button ${variant}-button ${customClass} ${
     enabled || `${variant}-button--disabled`
   }`;
 

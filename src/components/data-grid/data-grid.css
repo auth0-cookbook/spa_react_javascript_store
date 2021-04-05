@@ -1,7 +1,6 @@
 .data-grid {
   flex: 1;
   display: flex;
-  padding: 16px;
   color: var(--brown);
 }
 
@@ -60,6 +59,13 @@
   font-size: 16px;
 
   outline: none;
+}
+
+.data-box__error {
+  font-size: 16px;
+  font-weight: bold;
+  font-family: var(--core-font);
+  margin-bottom: 32px;
 }
 
 /* DataPoint */

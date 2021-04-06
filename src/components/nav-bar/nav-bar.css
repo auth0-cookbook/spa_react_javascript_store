@@ -1,15 +1,23 @@
-.nav-bar {
+.nav-bar__container {
   display: flex;
-  align-items: center;
-
+  justify-content: center;
   width: 100%;
-  height: 90px;
-
   background: var(--white);
 
   box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.2);
-  padding: 0 24px;
+
   z-index: 300;
+}
+
+.nav-bar {
+  flex: 1;
+  display: flex;
+  align-items: center;
+
+  max-width: 1200px;
+  height: 90px;
+
+  padding: 0 24px;
 }
 
 .nav-bar__tabs {
@@ -26,7 +34,7 @@
   }
 }
 
-@media only screen and (min-width: 321px) and (max-width: 1023px) and (orientation: landscape) {
+@media only screen and (min-device-width: 321px) and (max-device-width: 1023px) and (orientation: landscape) {
   .nav-bar {
     height: 60px;
     padding: 10px;

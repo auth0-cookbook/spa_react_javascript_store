@@ -3,19 +3,22 @@
   display: flex;
   flex-direction: column;
 
-  width: 100%;
-
   background-color: var(--cream);
 }
 
+.page-content__header-container {
+  display: flex;
+  justify-content: center;
+  background-color: var(--rich-brown);
+}
+
 .page-content__header {
+  flex: 1;
   display: flex;
   flex-direction: column;
 
-  width: 100%;
+  max-width: 1200px;
   padding: 24px;
-
-  background-color: var(--rich-brown);
 }
 
 .page-content__title {
@@ -23,10 +26,17 @@
   color: white;
 }
 
+.page-content__content-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
 .page-content__content {
   flex: 1;
   display: flex;
   flex-direction: column;
+  max-width: 1200px;
 }
 
 .page-content__content--padded {

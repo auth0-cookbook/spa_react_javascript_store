@@ -1,7 +1,6 @@
 import React from "react";
 
 import { DataBox } from "components/data-grid/data-grid";
-import { Loader } from "components/loader/loader";
 import { useSecureApi } from "security/hooks/use-secure-api";
 
 export const RewardsDetails = ({ customerId }) => {
@@ -32,7 +31,7 @@ export const RewardsDetails = ({ customerId }) => {
   }
 
   if (isLoading || isFetching) {
-    return <Loader />;
+    return <DataBox title="MyByte Rewards" />;
   }
 
   if (data) {

@@ -85,55 +85,57 @@ export const Footer = () => {
   ];
 
   return (
-    <footer className="footer">
-      <FooterRow>
-        <FooterCell size="xl" align="left">
-          <p className="footer__text-block">
-            <span>Auth0 Eats is brought to you by&nbsp;</span>
-            <FooterHyperlink path="https://auth0.com/">Auth0</FooterHyperlink>
-          </p>
-          <p className="footer__small-text-block">
-            <FooterHyperlink path="https://auth0.com/docs/quickstarts/">
-              <span>
-                Securely implement authentication using Auth0 on any stack and
-                any device&nbsp;
-              </span>
-              <u>in less than 10 minutes</u>
-            </FooterHyperlink>
-          </p>
-        </FooterCell>
-        <FooterCell>
-          <Button
-            variant="solid"
-            customClass="footer__cta-button"
-            label="Create Free Auth0 Account"
-            handleClick={() =>
-              window.open(
-                "https://auth0.com/signup",
-                "_blank",
-                "noopener noreferrer"
-              )
-            }
-          />
-        </FooterCell>
-        <FooterCell align="right">
-          <FooterList data={footerLinkList} />
-        </FooterCell>
-      </FooterRow>
-      <FooterRow>
-        <FooterCell>
-          <div className="footer__logo">
-            <img
-              className="footer__logo-image"
-              src="https://cdn.auth0.com/styleguide/components/1.0.8/media/logos/img/badge.png"
-              alt="Auth0"
+    <div className="footer__container">
+      <footer className="footer">
+        <FooterRow>
+          <FooterCell size="xl" align="left">
+            <p className="footer__text-block">
+              <span>Auth0 Eats is brought to you by&nbsp;</span>
+              <FooterHyperlink path="https://auth0.com/">Auth0</FooterHyperlink>
+            </p>
+            <p className="footer__small-text-block">
+              <FooterHyperlink path="https://auth0.com/docs/quickstarts/">
+                <span>
+                  Securely implement authentication using Auth0 on any stack and
+                  any device&nbsp;
+                </span>
+                <u>in less than 10 minutes</u>
+              </FooterHyperlink>
+            </p>
+          </FooterCell>
+          <FooterCell>
+            <Button
+              variant="solid"
+              customClass="footer__cta-button"
+              label="Create Free Auth0 Account"
+              handleClick={() =>
+                window.open(
+                  "https://auth0.com/signup",
+                  "_blank",
+                  "noopener noreferrer"
+                )
+              }
             />
-            <FooterHyperlink path="https://auth0.com/">
-              Auth0 Inc
-            </FooterHyperlink>
-          </div>
-        </FooterCell>
-      </FooterRow>
-    </footer>
+          </FooterCell>
+          <FooterCell align="right">
+            <FooterList data={footerLinkList} />
+          </FooterCell>
+        </FooterRow>
+        <FooterRow>
+          <FooterCell>
+            <div className="footer__logo">
+              <img
+                className="footer__logo-image"
+                src="https://cdn.auth0.com/styleguide/components/1.0.8/media/logos/img/badge.png"
+                alt="Auth0"
+              />
+              <FooterHyperlink path="https://auth0.com/">
+                Auth0 Inc
+              </FooterHyperlink>
+            </div>
+          </FooterCell>
+        </FooterRow>
+      </footer>
+    </div>
   );
 };

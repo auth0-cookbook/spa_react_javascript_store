@@ -25,19 +25,20 @@ export const PageContent = ({
     >
       {hasHeader && (
         <>
-          <header className="page-content__header">
-            <h2 className="page-content__title">{title}</h2>
-            <small className="page-content__description">{description}</small>
-          </header>
-          <article className="page-content__content page-content__content--padded">
-            {children}
-          </article>
+          <div className="page-content__header-container">
+            <header className="page-content__header">
+              <h2 className="page-content__title">{title}</h2>
+              <small className="page-content__description">{description}</small>
+            </header>
+          </div>
         </>
       )}
 
-      {!hasHeader && (
-        <article className="page-content__content">{children}</article>
-      )}
+      <div className="page-content__content-container">
+        <article className="page-content__content page-content__content--padded">
+          {children}
+        </article>
+      </div>
     </div>
   );
 };

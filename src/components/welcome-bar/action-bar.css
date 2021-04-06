@@ -4,6 +4,11 @@
   align-items: center;
   justify-content: center;
   padding: 24px 12px;
+  /*margin: 12px 0;*/
+  margin-bottom: 12px;
+  margin-top: 12px;
+
+  border: 1px solid #d4cbc7;
 }
 
 .action-bar__buttons {
@@ -43,8 +48,8 @@
   cursor: pointer;
 }
 
-@media only screen and (min-width: 320px) and (max-width: 480px),
-  (min-width: 321px) and (max-width: 680px) and (orientation: landscape) {
+@media only screen and (min-width: 320px) and (max-width: 640px),
+  (min-device-width: 321px) and (max-device-width: 680px) and (orientation: landscape) {
   .action-bar {
     flex-direction: column;
     align-content: center;

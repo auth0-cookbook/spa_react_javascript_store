@@ -44,7 +44,7 @@
   text-shadow: 0 1px 1px rgba(69, 20, 0, 0.7);
 }
 
-@media only screen and (max-width: 320px) {
+@media only screen and (max-width: 600px) {
   .logo__text-wrapper {
     display: none;
   }
@@ -69,7 +69,7 @@
 }
 
 /* Smartphones (landscape) ----------- */
-@media only screen and (min-width: 321px) and (max-width: 1023px) and (orientation: landscape) {
+@media only screen and (min-device-width: 321px) and (max-device-width: 1023px) and (orientation: landscape) {
   .logo {
     padding: 0;
   }

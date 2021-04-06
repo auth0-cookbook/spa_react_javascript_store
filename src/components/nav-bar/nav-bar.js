@@ -12,17 +12,19 @@ export const NavBar = () => {
   const { isLoading } = useAuth0();
 
   return (
-    <nav className="nav-bar">
-      <Link to="/">
-        <Logo />
-      </Link>
+    <div className="nav-bar__container">
+      <nav className="nav-bar">
+        <Link to="/">
+          <Logo />
+        </Link>
 
-      {!isLoading && (
-        <div className="nav-bar__tabs">
-          <NavBarTab label="MyByte" path="/account" />
-          <AuthenticationButton />
-        </div>
-      )}
-    </nav>
+        {!isLoading && (
+          <div className="nav-bar__tabs">
+            <NavBarTab label="MyByte" path="/account" />
+            <AuthenticationButton />
+          </div>
+        )}
+      </nav>
+    </div>
   );
 };

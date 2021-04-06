@@ -10,11 +10,12 @@
   background-position: top right;
 
   background-color: var(--dark-brown);
-  background-image: url("https://cdn.auth0.com/blog/auth0eats/food-bg-med.jpg");
+  background-image: url("https://images.ctfassets.net/23aumh6u8s0i/6fxOtdMCRo4SnTeMmWTLp0/a814cbc2e991149712795ba36d3da0b3/food-bg-med.jpeg");
 
   box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.2);
 
   padding: 90px 0;
+  margin: 12px 0;
 }
 
 .banner__content {
@@ -58,7 +59,8 @@
   text-shadow: 0 5px 5px rgba(0, 0, 0, 0.7);
 }
 
-@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+@media only screen and (min-width: 320px) and (max-width: 640px),
+  (min-device-width: 320px) and (max-device-width: 480px) {
   .banner {
     padding: 10px;
     background-position: center;

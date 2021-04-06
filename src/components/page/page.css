@@ -1,4 +1,4 @@
-.page-content {
+.page {
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -6,13 +6,13 @@
   background-color: var(--cream);
 }
 
-.page-content__header-container {
+.page-header__container {
   display: flex;
   justify-content: center;
   background-color: var(--rich-brown);
 }
 
-.page-content__header {
+.page-header {
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -21,38 +21,38 @@
   padding: 24px;
 }
 
-.page-content__title {
+.page-header__title {
   margin-top: 0;
   color: white;
 }
 
-.page-content__content-container {
+.page-content__container {
   flex: 1;
   display: flex;
   justify-content: center;
 }
 
-.page-content__content {
+.page-content {
   flex: 1;
   display: flex;
   flex-direction: column;
   max-width: 1200px;
 }
 
-.page-content__content--padded {
+.page-content--padded {
   padding: 16px;
 }
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
-  .page-content__header {
+  .page-header {
     padding: 20px 10px;
   }
 
-  .page-content__title {
+  .page-header__title {
     font-size: 20px;
   }
 
-  .page-content__description {
+  .page-header__description {
     font-size: 14px;
     line-height: 21px;
   }

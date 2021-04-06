@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 
-import "./page-content.css";
+import "components/page/page.css";
 
-export const PageContent = ({
+export const Page = ({
   children,
   title,
   description,
@@ -20,22 +20,22 @@ export const PageContent = ({
 
   return (
     <div
-      className="page-content"
+      className="page"
       style={{ backgroundImage: `url(${bgImg})`, backgroundSize: "cover" }}
     >
       {hasHeader && (
         <>
-          <div className="page-content__header-container">
-            <header className="page-content__header">
-              <h2 className="page-content__title">{title}</h2>
-              <small className="page-content__description">{description}</small>
+          <div className="page-header__container">
+            <header className="page-header">
+              <h2 className="page-header__title">{title}</h2>
+              <small className="page-header__description">{description}</small>
             </header>
           </div>
         </>
       )}
 
-      <div className="page-content__content-container">
-        <article className="page-content__content page-content__content--padded">
+      <div className="page-content__container">
+        <article className="page-content page-content--padded">
           {children}
         </article>
       </div>
@@ -43,7 +43,7 @@ export const PageContent = ({
   );
 };
 
-PageContent.propTypes = {
+Page.propTypes = {
   title: PropTypes.string,
   description: PropTypes.string,
   bgImg: PropTypes.string,

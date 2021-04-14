@@ -99,7 +99,7 @@ The values of `REACT_APP_AUTH0_AUDIENCE` and `REACT_APP_API_SERVER_ROOT_URL` req
   - If you are using a local repository to run the Auth0 Eats Rewards API server, the value is `http://localhost:6060`.
   - If you are using a cloud IDE, such a Glitch, or any live server, use the server URL that the platform provides.
 
-**To complete this setup, restart the React development server**. Locally, you can do that by stopping the server and running it again. In CodeSandbox, the server should restart automatically once you update `.env` &mdash; If not, refresh your project page.
+**To complete this setup, restart the React development server**. Locally, you can do that by stopping the server and running it again. In CodeSandbox, the server should restart automatically once you update `.env`. If not, refresh your project page.
 
 ## 3. Connect a Client Application with Auth0
 

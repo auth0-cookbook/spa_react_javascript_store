@@ -10,7 +10,7 @@ There are two ways to get started: you can work with a local repository or you c
 
 ### 1.A. Use a local repository
 
-Clone the repository: 
+Clone the repository:
 
 ```bash
 git clone git@github.com:auth0-cookbook/spa_react_javascript_store.git
@@ -50,7 +50,7 @@ Click on the link below to launch this project on CodeSandbox:
 
 Once CodeSandbox completes the project setup, you'll see a live preview on the right-hand side and a full code editor on the left-hand side. CodeSandbox creates a project fork for you once you make a change on any of the template project files. Your project fork has its own unique URL as seen in the embedded browser address bar.
 
-Making any changes to your project code will update the live preview right away. 
+Making any changes to your project code will update the live preview right away.
 
 To complete the set up, create a `.env` file under the project directory.
 
@@ -72,7 +72,7 @@ The process of creating an Auth0 Single-Page Application register is straightfor
 
 - Click on the **"Create"** button.
 
-A new page loads with details about your Auth0 application register. Click on its **"Settings"** tab to access its configuration values. 
+A new page loads with details about your Auth0 application register. Click on its **"Settings"** tab to access its configuration values.
 
 Next, open the `.env` file under your project directory and populate with the following:
 
@@ -93,15 +93,12 @@ The values of `REACT_APP_AUTH0_AUDIENCE` and `REACT_APP_API_SERVER_ROOT_URL` req
 
 - The value of `REACT_APP_AUTH0_AUDIENCE` is the value of your Auth0 API **Identifier**.
 
-    - If you used the prescribed value, the Auth0 API Identifier value is `https://rewards.example.com`.
+  - If you used the prescribed value, the Auth0 API Identifier value is `https://rewards.example.com`.
 
 - The value of `REACT_APP_API_SERVER_ROOT_URL` is the value of your Auth0 Eats Rewards API server root URL.
-    
-   - If you are using a local repository to run the Auth0 Eats Rewards API server, the value is `http://localhost:6060`.
-       
-   - If you are using a cloud IDE, such a Glitch, or any live server, use the server URL that the platform provides.
-   
-   
+  - If you are using a local repository to run the Auth0 Eats Rewards API server, the value is `http://localhost:6060`.
+  - If you are using a cloud IDE, such a Glitch, or any live server, use the server URL that the platform provides.
+
 **To complete this setup, restart the React development server**. Locally, you can do that by stopping the server and running it again. In CodeSandbox, the server should restart automatically once you update `.env` &mdash; If not, refresh your project page.
 
 ## 3. Connect a Client Application with Auth0
@@ -125,11 +122,11 @@ https://<CODESANDBOX-ID>.csb.app/
 After a user authenticates, Auth0 only calls back any of the URLs listed in this field. You can specify multiple valid URLs by comma-separating them (typically to handle different environments like QA or testing). Make sure to specify the protocol, `http://` or `https://`; otherwise, the callback may fail in some cases.
 
 A client application will make requests under the hood to an Auth0 URL to handle authentication requests. As such, you need to add your the application's [origin URL](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Origin) to avoid [Cross-Origin Resource Sharing (CORS)](https://auth0.com/blog/cors-tutorial-a-guide-to-cross-origin-resource-sharing/) issues.
-    
+
 ### Allowed Logout URLs
 
 This field holds a set of URLs that Auth0 can redirect to after a user logs out of your application. The default configuration of the demo client uses the provided value for redirecting users.
-    
+
 With these values in place, you can scroll to the bottom of the **"Settings"** page and click on the **"Save Changes"** button.
 
 ## 4. Testing the User Authentication Flow
